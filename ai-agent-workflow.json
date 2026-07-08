@@ -52,6 +52,8 @@
     },
     {
       "parameters": {
+        "respondWith": "text",
+        "responseBody": "={{ $json.output.trim() }}",
         "options": {}
       },
       "type": "n8n-nodes-base.respondToWebhook",
@@ -83,6 +85,21 @@
           "__aiGatewayManaged": true
         }
       }
+    },
+    {
+      "parameters": {
+        "url": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('URL', ``, 'string') }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.4,
+      "position": [
+        464,
+        304
+      ],
+      "id": "9717055d-4825-4322-a121-4207db7229b5",
+      "name": "HTTP Request",
+      "notes": "Use this tool to fetch and read the HTML or text content of any URL or website provided by the user"
     }
   ],
   "pinData": {},
@@ -141,6 +158,17 @@
           }
         ]
       ]
+    },
+    "HTTP Request": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "active": false,
@@ -149,7 +177,7 @@
     "binaryMode": "separate",
     "availableInMCP": false
   },
-  "versionId": "3ab6f78a-0124-4b9a-b5b6-4a437f9d0e77",
+  "versionId": "0c45540f-0d59-4dea-a47e-08082a729dbe",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "eaaadd20672f44ddaebc8236d20d38a5a7b7b53a9174e1917511f6ffc52bf475"
